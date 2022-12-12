@@ -1,0 +1,27 @@
+{
+  "name": "red-contrib-st-opc-da",
+  "version": "1.0.9",
+  "description": "Node Red OPC DA Client",
+  "main": "opc-da-client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerafinTech/node-red-contrib-st-opc-da.git"
+  },
+  "author": "Jason Serafin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SerafinTech/node-red-contrib-st-opc-da/issues"
+  },
+  "homepage": "https://github.com/SerafinTech/node-red-contrib-st-opc-da#readme",
+  "node-red": {
+    "nodes": {
+      "opc-da-client": "opc-da-client.js"
+    }
+  },
+  "dependencies": {
+    "st-opc-da": "github:SerafinTech/node-st-opc-da"
+  }
+}

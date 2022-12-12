@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    RED.nodes.registerType('opc-da-client',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            server: {value: ""},
+            update: {value: 1}
+        },
+        inputs:1,
+        outputs:1,
+        label: function() {
+            return this.name||"opc-da-client";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="opc-da-client">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-server"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Server Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-update"><i class="fa fa-refresh"></i> Update Rate</label>
+        <input type="text" id="node-input-update" placeholder="Update Rate">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="opc-da-client">
+    <p>OPC DA Client</p>
+</script>
