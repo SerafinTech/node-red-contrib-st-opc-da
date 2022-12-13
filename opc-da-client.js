@@ -36,6 +36,12 @@ module.exports = function(RED) {
             }
 
         });
+        
+        node.on('close', () => {
+            if(opc.servers[config.server]) {
+                opc.servers[config.server].kill()
+            }
+        })
 
     }
 
