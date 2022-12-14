@@ -5,7 +5,8 @@
         defaults: {
             name: {value:""},
             server: {value: ""},
-            update: {value: 1}
+            update: {value: 1},
+            changeEvent: {value: 'false'}
         },
         inputs:1,
         outputs:1,
@@ -27,6 +28,10 @@
     <div class="form-row">
         <label for="node-input-update"><i class="fa fa-refresh"></i> Update Rate</label>
         <input type="text" id="node-input-update" placeholder="Update Rate">
+    </div>
+    <div class="form-row">
+        <label for="node-input-changeEvent"><i class="fa fa-refresh"></i> Change Event Enabled</label>
+        <input type="checkbox" id="node-input-changeEvent" >
     </div>
 </script>
 

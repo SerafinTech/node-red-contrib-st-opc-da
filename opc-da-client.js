@@ -9,8 +9,8 @@ module.exports = function(RED) {
 
         opc.on('tag change', tag => {
 
-            let msg = {payload: tag}
-            node.send(msg)
+            let msg = {payload: tag};
+            if(config.changeEvent) node.send(msg);
         })
 
         node.on('input', function(msg) {
