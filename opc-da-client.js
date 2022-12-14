@@ -26,6 +26,14 @@ module.exports = function(RED) {
                 opc.addReadOPCTag(config.server, msg.payload.data.name)
             }
 
+            if(msg.payload.cmd === 'add items') {
+                if(msg.payload.data.names) {
+                    msg.payload.data.names.forEach(name => {
+                        opc.addReadOPCTag(config.server, name)
+                    });
+                }   
+            }
+
             if(msg.payload.cmd === 'start server') {
                 opc.startReadServer(config.server, config.update)
             }
