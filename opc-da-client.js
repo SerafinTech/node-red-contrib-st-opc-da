@@ -43,6 +43,10 @@ module.exports = function(RED) {
                 node.send(msg)
             }
 
+            if(msg.payload.cmd === 'write value') {
+                opc.writeTag({server: config.server, name: msg.payload.data.name}, msg.payload.data.value)
+            }
+
         });
         
         node.on('close', () => {
