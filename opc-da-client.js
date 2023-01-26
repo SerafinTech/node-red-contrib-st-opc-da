@@ -55,6 +55,24 @@ module.exports = function(RED) {
                 })
             }
 
+            if(msg.payload.cmd === 'write values') {
+                let tags = []
+                let values = []
+                msg.payload.data.forEach(item => {
+                    tags.push(item.name)
+                    values.push(item.value)
+                })
+                opc.writeTags(config.server,tags, values)
+                .then(data => {
+                    msg.payload = data;
+                    node.send(msg)
+                })
+                .catch(err => {
+                    msg.error = err;
+                    node.send(msg);
+                })
+            }
+
         });
         
         node.on('close', () => {
