@@ -45,6 +45,14 @@ module.exports = function(RED) {
 
             if(msg.payload.cmd === 'write value') {
                 opc.writeTag({server: config.server, name: msg.payload.data.name}, msg.payload.data.value)
+                .then(data => {
+                    msg.payload = data;
+                    node.send(msg)
+                })
+                .catch(err => {
+                    msg.error = err;
+                    node.send(msg);
+                })
             }
 
         });
