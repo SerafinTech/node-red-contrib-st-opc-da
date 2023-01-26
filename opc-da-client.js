@@ -59,10 +59,10 @@ module.exports = function(RED) {
                 let tags = []
                 let values = []
                 msg.payload.data.forEach(item => {
-                    tags.push(item.name)
+                    tags.push(item.tag)
                     values.push(item.value)
                 })
-                opc.writeTags(config.server,tags, values)
+                opc.writeTags(config.server, tags, values)
                 .then(data => {
                     msg.payload = data;
                     node.send(msg)
